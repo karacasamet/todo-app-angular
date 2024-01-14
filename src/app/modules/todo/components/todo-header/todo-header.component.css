@@ -1,0 +1,18 @@
+.todo-header {
+  display: grid;
+  margin: 1rem 0;
+  grid-template-columns: 1fr 100px 150px;
+  align-items: center;
+  font-weight: 500;
+  div {
+    display: flex;
+    align-items: center;
+    mat-icon {
+      margin-left: 10px;
+    }
+  }
+}
+
+.text-center {
+  text-align: center;
+}

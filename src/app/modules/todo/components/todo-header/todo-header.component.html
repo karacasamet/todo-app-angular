@@ -1,0 +1,20 @@
+<div class="todo-header">
+  <div>Name</div>
+  <button mat-button (click)="sortTodos()" style="padding: 0">
+    Priority
+    <mat-icon
+      aria-hidden="false"
+      aria-label="Example home icon"
+      fontIcon="arrow_upward"
+      *ngIf="(getTodosSort$ | async) === todoSort.Ascending"
+    ></mat-icon>
+    <mat-icon
+      aria-hidden="false"
+      aria-label="Example home icon"
+      fontIcon="arrow_downward"
+      *ngIf="(getTodosSort$ | async) === todoSort.Descending"
+    ></mat-icon>
+  </button>
+  <div class="text-center">Actions</div>
+</div>
+<mat-divider></mat-divider>

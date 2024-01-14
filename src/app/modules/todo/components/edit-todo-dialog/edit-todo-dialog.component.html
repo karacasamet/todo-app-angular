@@ -1,0 +1,32 @@
+<h1 mat-dialog-title>Edit ToDo</h1>
+<div mat-dialog-content>
+  <form [formGroup]="todoForm">
+    <mat-form-field>
+      <mat-label>New ToDo name</mat-label>
+      <input matInput formControlName="todoName" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Priority</mat-label>
+      <select matNativeControl formControlName="todoPriority">
+        <option
+          *ngFor="let todoPriority of todoPriorityValues"
+          [value]="todoPriority"
+        >
+          {{ todoPriority }}
+        </option>
+      </select>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions align="end">
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button
+    mat-button
+    [disabled]="!todoForm.valid"
+    [mat-dialog-close]="todoForm.value"
+    cdkFocusInitial
+  >
+    Ok
+  </button>
+</div>

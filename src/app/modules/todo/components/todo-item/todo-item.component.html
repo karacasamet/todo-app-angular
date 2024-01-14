@@ -1,0 +1,43 @@
+<div class="todo-item">
+  <span
+    [style]="
+      todo.status === statusEnum.Complete
+        ? 'text-decoration: line-through; color: gray;'
+        : ''
+    "
+    >{{ todo.name }}
+    <ng-container *ngIf="todo.status === statusEnum.Complete"
+      >(completed)</ng-container
+    >
+  </span>
+  <div>
+    {{ todo.priority | titlecase }}
+  </div>
+  <div class="todo-actions">
+    <mat-slide-toggle
+      class="example-margin"
+      [checked]="todo.status | trueFalse : statusEnum.Complete"
+      (change)="changeTodoStatus()"
+    >
+    </mat-slide-toggle>
+
+    <button
+      mat-mini-fab
+      color="secondary"
+      aria-label="Edit"
+      (click)="openEditDialog()"
+    >
+      <mat-icon>edit</mat-icon>
+    </button>
+
+    <button
+      mat-mini-fab
+      color="warn"
+      aria-label="Delete"
+      (click)="removeTodo()"
+    >
+      <mat-icon>delete</mat-icon>
+    </button>
+  </div>
+</div>
+<mat-divider></mat-divider>

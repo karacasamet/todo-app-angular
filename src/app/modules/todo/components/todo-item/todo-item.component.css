@@ -1,0 +1,19 @@
+.todo-item {
+  display: grid;
+  align-items: center;
+  margin: 1rem 0;
+  grid-template-columns: 1fr 100px 150px;
+}
+
+.todo-actions button {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.todo-list-form .mat-raised-button {
+  margin-left: 10px;
+}
+
+.line-through {
+  text-decoration: line-through;
+}
