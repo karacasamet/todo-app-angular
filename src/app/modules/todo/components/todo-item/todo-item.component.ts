@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
 import { TodoStatus } from 'src/app/modules/shared/enums/todo.enums';
 import { Todo } from 'src/app/modules/shared/interfaces/todo.interfaces';
 import { EditTodoDialogComponent } from '../edit-todo-dialog/edit-todo-dialog.component';
