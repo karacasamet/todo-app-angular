@@ -2,12 +2,16 @@
   display: grid;
   align-items: center;
   margin: 1rem 0;
-  grid-template-columns: 1fr 100px 150px;
+  grid-template-columns: 1fr 100px auto;
 }
 
-.todo-actions button {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
+.todo-actions {
+  display: flex;
+  align-items: center;
+  button {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
 }
 
 .todo-list-form .mat-mdc-raised-button {
