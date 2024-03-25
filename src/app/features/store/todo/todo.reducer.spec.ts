@@ -1,5 +1,5 @@
-import { TodoStatus } from '../../shared/enums/todo.enums';
-import { todos } from '../../shared/mock/todo.mock';
+import { TodoStatus } from '../../../shared/enums/todo.enums';
+import { todos } from '../../../shared/mock/todo.mock';
 import { changeTodoStatus, getTodosSuccess } from './todo.actions';
 import { initialState, todoReducer } from './todo.reducer';
 

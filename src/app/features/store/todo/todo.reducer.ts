@@ -3,8 +3,8 @@ import {
   FilterType,
   TodoSort,
   TodoStatus,
-} from '../../shared/enums/todo.enums';
-import { TodoState } from '../../shared/interfaces/todo.interfaces';
+} from '../../../shared/enums/todo.enums';
+import { TodoState } from '../../../shared/interfaces/todo.interfaces';
 import * as actions from './todo.actions';
 
 export const TODO_FEATURE_KEY = 'todo-store';

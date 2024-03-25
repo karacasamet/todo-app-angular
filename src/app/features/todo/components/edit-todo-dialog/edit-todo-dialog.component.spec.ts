@@ -8,7 +8,7 @@ import {
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { todos } from 'src/app/modules/shared/mock/todo.mock';
+import { todos } from 'src/app/shared/mock/todo.mock';
 import { EditTodoDialogComponent } from './edit-todo-dialog.component';
 
 describe('EditTodoDialogComponent', () => {

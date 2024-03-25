@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { TodoSort } from 'src/app/modules/shared/enums/todo.enums';
-import { sortTodos } from 'src/app/modules/store/todo/todo.actions';
-import { getTodosSort } from 'src/app/modules/store/todo/todo.selectors';
+import { sortTodos } from 'src/app/features/store/todo/todo.actions';
+import { getTodosSort } from 'src/app/features/store/todo/todo.selectors';
+import { TodoSort } from 'src/app/shared/enums/todo.enums';
 
 @Component({
   selector: 'app-todo-header',
