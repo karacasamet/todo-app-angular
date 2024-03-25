@@ -5,9 +5,9 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { of } from 'rxjs';
-import { TrueFalsePipe } from 'src/app/modules/pipes/true-false.pipe';
-import { Todo } from 'src/app/modules/shared/interfaces/todo.interfaces';
-import { todos } from 'src/app/modules/shared/mock/todo.mock';
+import { Todo } from 'src/app/shared/interfaces/todo.interfaces';
+import { todos } from 'src/app/shared/mock/todo.mock';
+import { TrueFalsePipe } from 'src/app/shared/pipes/true-false.pipe';
 import { EditTodoDialogComponent } from '../edit-todo-dialog/edit-todo-dialog.component';
 import { TodoItemComponent } from './todo-item.component';
 

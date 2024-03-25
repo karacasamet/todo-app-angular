@@ -1,6 +1,6 @@
 import { createAction, props } from '@ngrx/store';
-import { FilterType } from '../../shared/enums/todo.enums';
-import { Todo } from '../../shared/interfaces/todo.interfaces';
+import { FilterType } from '../../../shared/enums/todo.enums';
+import { Todo } from '../../../shared/interfaces/todo.interfaces';
 import { createFailureAction, createSuccessAction } from '../action-utils';
 
 export const getTodos = createAction('[ToDo] Get ToDo List');

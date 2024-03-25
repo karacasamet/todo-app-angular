@@ -1,0 +1,33 @@
+<div class="container">
+  <form [formGroup]="todoForm">
+    <div class="todo-list-form">
+      <mat-form-field>
+        <mat-label>Todo List Item</mat-label>
+        <input
+          matInput
+          placeholder="E.g. Send Email"
+          formControlName="todoName"
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Priority</mat-label>
+        <select matNativeControl formControlName="todoPriority">
+          <option
+            *ngFor="let todoPriority of todoPriorityValues"
+            [value]="todoPriority"
+          >
+            {{ todoPriority }}
+          </option>
+        </select>
+      </mat-form-field>
+      <button
+        mat-raised-button
+        color="primary"
+        [disabled]="todoForm.invalid"
+        (click)="addNewTodo()"
+      >
+        Add Todo
+      </button>
+    </div>
+  </form>
+</div>

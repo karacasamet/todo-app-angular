@@ -1,8 +1,8 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { TodoPriority } from 'src/app/modules/shared/enums/todo.enums';
-import { Todo } from 'src/app/modules/shared/interfaces/todo.interfaces';
+import { TodoPriority } from 'src/app/shared/enums/todo.enums';
+import { Todo } from 'src/app/shared/interfaces/todo.interfaces';
 
 @Component({
   selector: 'app-edit-todo-dialog',

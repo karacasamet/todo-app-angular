@@ -3,7 +3,7 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
 import { of } from 'rxjs';
 import { catchError, map, switchMap } from 'rxjs/operators';
-import { todos } from '../../shared/mock/todo.mock';
+import { todos } from '../../../shared/mock/todo.mock';
 import * as actions from './todo.actions';
 
 @Injectable()

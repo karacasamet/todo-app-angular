@@ -4,8 +4,8 @@ import {
   TodoPriority,
   TodoSort,
   TodoStatus,
-} from '../../shared/enums/todo.enums';
-import { Todo, TodoState } from '../../shared/interfaces/todo.interfaces';
+} from '../../../shared/enums/todo.enums';
+import { Todo, TodoState } from '../../../shared/interfaces/todo.interfaces';
 import { TODO_FEATURE_KEY } from './todo.reducer';
 
 export const getTodoState = createFeatureSelector<TodoState>(TODO_FEATURE_KEY);

@@ -1,0 +1,8 @@
+<app-todo-form (newTodo)="addNewTodo($event)"></app-todo-form>
+<app-todo-list
+  [todos]="todos$ | async"
+  (todoStatusChanged)="todoStatusChanged($event)"
+  (todoUpdated)="todoUpdated($event)"
+  (todoRemoved)="todoRemoved($event)"
+  (tabChanged)="tabChanged($event)"
+></app-todo-list>
