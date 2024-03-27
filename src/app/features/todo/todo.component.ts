@@ -1,8 +1,8 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { TodoPriority } from '../../shared/enums/todo.enums';
-import { Todo } from '../../shared/interfaces/todo.interfaces';
-import { TodoFacade } from '../store/todo/todo.facade';
+import { Todo, UpdatedTodo } from '../../shared/types/todo.type';
+import { TodoFacade } from './store/todo/todo.facade';
 
 @Component({
   selector: 'app-todo',
@@ -20,17 +20,12 @@ export class TodoComponent implements OnInit {
     this._todoFacade.getAllTodos();
   }
 
-  addNewTodo(
-    todo: Partial<{
-      todoName: string;
-      todoPriority: TodoPriority;
-    }>
-  ) {
+  addNewTodo(todo: { todoName: string; todoPriority: TodoPriority }) {
     this._todoFacade.addTodo(todo);
   }
 
-  todoUpdated({ todo, newTodo }: { todo: Todo; newTodo: Todo }) {
-    this._todoFacade.updateTodo(todo, newTodo);
+  todoUpdated({ todo, updatedTodo }: { todo: Todo; updatedTodo: UpdatedTodo }) {
+    this._todoFacade.updateTodo(todo, updatedTodo);
   }
 
   todoStatusChanged(todo: Todo) {

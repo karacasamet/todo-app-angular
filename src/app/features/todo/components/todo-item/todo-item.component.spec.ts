@@ -5,8 +5,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { of } from 'rxjs';
-import { Todo } from 'src/app/shared/interfaces/todo.interfaces';
-import { todos } from 'src/app/shared/mock/todo.mock';
+import { mockTodos } from 'src/app/shared/mock/todo.mock';
 import { TrueFalsePipe } from 'src/app/shared/pipes/true-false.pipe';
 import { EditTodoDialogComponent } from '../edit-todo-dialog/edit-todo-dialog.component';
 import { TodoItemComponent } from './todo-item.component';
@@ -29,7 +28,7 @@ describe('TodoItemComponent', () => {
 
     fixture = TestBed.createComponent(TodoItemComponent);
     component = fixture.componentInstance;
-    component.todo = todos[0];
+    component.todo = mockTodos[0];
     fixture.detectChanges();
   });
 
@@ -41,14 +40,17 @@ describe('TodoItemComponent', () => {
     jest.spyOn(component.todoUpdated, 'emit');
     jest.spyOn(component.dialog, 'open').mockReturnValue({
       afterClosed: () =>
-        of({ todoName: todos[1].name, todoPriority: todos[1].priority }),
+        of({
+          todoName: mockTodos[1].name,
+          todoPriority: mockTodos[1].priority,
+        }),
     } as MatDialogRef<EditTodoDialogComponent>);
     component.openEditDialog();
 
     expect(component.todoUpdated.emit).toHaveBeenCalled();
     expect(component.todoUpdated.emit).toHaveBeenCalledWith({
-      todo: todos[0],
-      newTodo: { name: todos[1].name, priority: todos[1].priority } as Todo,
+      todo: mockTodos[0],
+      updatedTodo: { name: mockTodos[1].name, priority: mockTodos[1].priority },
     });
   });
 

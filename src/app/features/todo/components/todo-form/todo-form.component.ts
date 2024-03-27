@@ -8,9 +8,10 @@ import { TodoPriority } from 'src/app/shared/enums/todo.enums';
   styleUrl: './todo-form.component.css',
 })
 export class TodoFormComponent {
-  @Output() newTodo = new EventEmitter<
-    Partial<{ todoName: string; todoPriority: TodoPriority }>
-  >();
+  @Output() newTodo = new EventEmitter<{
+    todoName: string;
+    todoPriority: TodoPriority;
+  }>();
 
   todoPriorityValues = Object.values(TodoPriority);
 
@@ -22,10 +23,10 @@ export class TodoFormComponent {
   addNewTodo() {
     if (!this.todoForm.valid) return;
     this.newTodo.emit(
-      this.todoForm.value as Partial<{
+      this.todoForm.value as {
         todoName: string;
         todoPriority: TodoPriority;
-      }>
+      }
     );
     this.todoForm.reset();
   }
