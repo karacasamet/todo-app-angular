@@ -1,24 +1,23 @@
-import { Component, OnInit } from '@angular/core';
-import { Store, select } from '@ngrx/store';
+import { Component, inject } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { sortTodos } from 'src/app/features/store/todo/todo.actions';
-import { getTodosSort } from 'src/app/features/store/todo/todo.selectors';
 import { TodoSort } from 'src/app/shared/enums/todo.enums';
+import { TodoFacade } from '../../store/todo/todo.facade';
 
 @Component({
   selector: 'app-todo-header',
   templateUrl: './todo-header.component.html',
   styleUrls: ['./todo-header.component.css'],
 })
-export class TodoHeaderComponent implements OnInit {
-  getTodosSort$: Observable<TodoSort> = this.store.pipe(select(getTodosSort));
+export class TodoHeaderComponent {
+  _todoFacade = inject(TodoFacade);
+
+  getTodosSort$: Observable<TodoSort> = this._todoFacade.todosSort$;
   todoSort = TodoSort;
 
   constructor(private store: Store) {}
 
-  ngOnInit(): void {}
-
   sortTodos() {
-    this.store.dispatch(sortTodos());
+    this._todoFacade.sortTodos();
   }
 }

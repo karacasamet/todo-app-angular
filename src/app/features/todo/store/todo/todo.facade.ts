@@ -1,12 +1,13 @@
 import { Injectable, inject } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable, firstValueFrom } from 'rxjs';
-import { Todo } from 'src/app/shared/interfaces/todo.interfaces';
+import { Todo, UpdatedTodo } from 'src/app/shared/types/todo.type';
 import {
   FilterType,
   TodoPriority,
+  TodoSort,
   TodoStatus,
-} from '../../../shared/enums/todo.enums';
+} from '../../../../shared/enums/todo.enums';
 import {
   addTodo,
   changeFilter,
@@ -14,12 +15,14 @@ import {
   changeTodoStatus,
   getTodos,
   removeTodo,
+  sortTodos,
 } from './todo.actions';
 import {
   getAllTodos,
   getCompletedTodos,
   getFilteredTodos,
   getInProgressTodos,
+  getTodosSort,
 } from './todo.selectors';
 
 @Injectable({
@@ -42,16 +45,16 @@ export class TodoFacade {
     select(getFilteredTodos)
   );
 
+  todosSort$: Observable<TodoSort> = this._store.pipe(select(getTodosSort));
+
   getAllTodos() {
     this._store.dispatch(getTodos());
   }
 
-  async addTodo(
-    value: Partial<{
-      todoName: string | null;
-      todoPriority: TodoPriority | null;
-    }>
-  ) {
+  async addTodo(value: {
+    todoName: string | null;
+    todoPriority: TodoPriority | null;
+  }) {
     const { todoName: name, todoPriority: priority } = value;
     const todos = await firstValueFrom(this.allTodos$);
     this._store.dispatch(
@@ -66,8 +69,8 @@ export class TodoFacade {
     );
   }
 
-  updateTodo(todo: Todo, newTodo: Todo) {
-    this._store.dispatch(changeTodo({ todo, newTodo }));
+  updateTodo(todo: Todo, updatedTodo: UpdatedTodo) {
+    this._store.dispatch(changeTodo({ todo, updatedTodo }));
   }
 
   removeTodo(todo: Todo) {
@@ -77,10 +80,15 @@ export class TodoFacade {
   updateStatusTodo(todo: Todo) {
     this._store.dispatch(changeTodoStatus({ todo }));
   }
+
   changeFilterTodos(index: number) {
     this._store.dispatch(
       changeFilter({ status: this.checkIndexForFilter(index) })
     );
+  }
+
+  sortTodos() {
+    this._store.dispatch(sortTodos());
   }
 
   checkIndexForFilter(index: number): FilterType {

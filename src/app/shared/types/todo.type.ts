@@ -5,15 +5,20 @@ import {
   TodoStatus,
 } from '../enums/todo.enums';
 
-export interface Todo {
+export type Todo = {
   id: number;
-  name?: string;
+  name: string;
   status: TodoStatus;
   priority: TodoPriority;
-}
+};
 
-export interface TodoState {
+export type UpdatedTodo = {
+  name: string;
+  priority: TodoPriority;
+};
+
+export type TodoState = {
   todoList: Todo[];
   filter: FilterType;
   sort: TodoSort;
-}
+};

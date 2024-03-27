@@ -8,8 +8,11 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment'; // Angular CLI environemnt
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TodoEffects } from './features/store/todo/todo.effects';
-import { TODO_FEATURE_KEY, reducer } from './features/store/todo/todo.reducer';
+import { TodoEffects } from './features/todo/store/todo/todo.effects';
+import {
+  TODO_FEATURE_KEY,
+  reducer,
+} from './features/todo/store/todo/todo.reducer';
 
 @NgModule({
   declarations: [AppComponent],

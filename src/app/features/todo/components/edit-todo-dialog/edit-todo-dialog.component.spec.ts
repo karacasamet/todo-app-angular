@@ -8,7 +8,7 @@ import {
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { todos } from 'src/app/shared/mock/todo.mock';
+import { mockTodos } from 'src/app/shared/mock/todo.mock';
 import { EditTodoDialogComponent } from './edit-todo-dialog.component';
 
 describe('EditTodoDialogComponent', () => {
@@ -35,13 +35,13 @@ describe('EditTodoDialogComponent', () => {
           provide: MatDialogRef,
           useValue: mockDialogRef,
         },
-        { provide: MAT_DIALOG_DATA, useValue: todos[0] },
+        { provide: MAT_DIALOG_DATA, useValue: mockTodos[0] },
       ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(EditTodoDialogComponent);
     component = fixture.componentInstance;
-    component.data = todos[0];
+    component.data = mockTodos[0];
     fixture.detectChanges();
   });
 
@@ -61,5 +61,10 @@ describe('EditTodoDialogComponent', () => {
     expect(component.todoForm.get('todoPriority')?.value).toEqual(
       component.data.priority
     );
+  });
+
+  it('should call close method of MatDialogRef', () => {
+    component.onCancel();
+    expect(mockDialogRef.close).toHaveBeenCalled();
   });
 });

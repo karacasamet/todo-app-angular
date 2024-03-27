@@ -1,7 +1,10 @@
 import { createAction, props } from '@ngrx/store';
-import { FilterType } from '../../../shared/enums/todo.enums';
-import { Todo } from '../../../shared/interfaces/todo.interfaces';
-import { createFailureAction, createSuccessAction } from '../action-utils';
+import { FilterType } from '../../../../shared/enums/todo.enums';
+import {
+  createFailureAction,
+  createSuccessAction,
+} from '../../../../shared/store/action-utils';
+import { Todo, UpdatedTodo } from '../../../../shared/types/todo.type';
 
 export const getTodos = createAction('[ToDo] Get ToDo List');
 export const getTodosSuccess = createSuccessAction(
@@ -17,7 +20,7 @@ export const addTodo = createAction(
 
 export const changeTodo = createAction(
   '[ToDo] Change ToDo',
-  props<{ todo: Todo; newTodo: Todo }>()
+  props<{ todo: Todo; updatedTodo: UpdatedTodo }>()
 );
 
 export const changeTodoStatus = createAction(

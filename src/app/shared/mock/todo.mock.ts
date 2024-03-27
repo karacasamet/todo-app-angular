@@ -1,7 +1,7 @@
 import { TodoPriority, TodoStatus } from '../enums/todo.enums';
-import { Todo } from '../interfaces/todo.interfaces';
+import { Todo } from '../types/todo.type';
 
-export const todos: Todo[] = [
+export const mockTodos: Todo[] = [
   {
     id: 1,
     name: 'My first todo',
@@ -13,5 +13,11 @@ export const todos: Todo[] = [
     name: 'My second todo',
     status: TodoStatus.InProgress,
     priority: TodoPriority.Medium,
+  },
+  {
+    id: 3,
+    name: 'My third todo',
+    status: TodoStatus.InProgress,
+    priority: TodoPriority.High,
   },
 ];

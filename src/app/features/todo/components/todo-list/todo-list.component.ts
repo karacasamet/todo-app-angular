@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Todo } from 'src/app/shared/interfaces/todo.interfaces';
+import { Todo, UpdatedTodo } from 'src/app/shared/types/todo.type';
 
 @Component({
   selector: 'app-todo-list',
@@ -9,7 +9,10 @@ import { Todo } from 'src/app/shared/interfaces/todo.interfaces';
 export class TodoListComponent {
   @Input() todos!: Todo[] | null;
   @Output() todoStatusChanged = new EventEmitter<Todo>();
-  @Output() todoUpdated = new EventEmitter<{ todo: Todo; newTodo: Todo }>();
+  @Output() todoUpdated = new EventEmitter<{
+    todo: Todo;
+    updatedTodo: UpdatedTodo;
+  }>();
   @Output() todoRemoved = new EventEmitter<Todo>();
   @Output() tabChanged = new EventEmitter<number>();
 }
