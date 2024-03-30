@@ -1,0 +1,7 @@
+@use "/src/scss/variables";
+@use "/src/scss/mixins";
+
+.todo-list-form {
+  @include mixins.flex-center-space-around;
+  margin-bottom: variables.$margin-bottom;
+}

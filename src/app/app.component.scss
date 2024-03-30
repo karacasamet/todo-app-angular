@@ -1,0 +1,49 @@
+@use "/src/scss/variables";
+@use "/src/scss/mixins";
+
+#app {
+  font-family: variables.$font-stack;
+  color: variables.$primary-color;
+  background: variables.$background-color;
+  @include mixins.flex-center;
+  flex-direction: column;
+  height: 100%;
+  font-size: 1.2rem;
+}
+
+#header {
+  background: variables.$white-color;
+  padding: 1rem 1rem;
+  @include mixins.flex-center;
+  flex-direction: row;
+  justify-content: space-between;
+
+  > div {
+    > img {
+      height: 1.75rem;
+    }
+
+    > span {
+      vertical-align: super;
+    }
+  }
+}
+
+#content {
+  @include mixins.flex-center;
+  flex-direction: column;
+  flex-grow: 1;
+
+  > img {
+    height: 45vh;
+  }
+
+  > p {
+    font-size: 1.5rem;
+  }
+}
+
+#footer {
+  margin-bottom: variables.$footer-margin-bottom;
+  text-align: center;
+}

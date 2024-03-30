@@ -12,12 +12,11 @@
       <mat-form-field>
         <mat-label>Priority</mat-label>
         <select matNativeControl formControlName="todoPriority">
-          <option
-            *ngFor="let todoPriority of todoPriorityValues"
-            [value]="todoPriority"
-          >
+          @for (todoPriority of todoPriorityValues; track todoPriorityValues) {
+          <option [value]="todoPriority">
             {{ todoPriority }}
           </option>
+          }
         </select>
       </mat-form-field>
       <button

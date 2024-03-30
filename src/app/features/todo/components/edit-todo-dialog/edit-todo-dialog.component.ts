@@ -7,7 +7,7 @@ import { Todo } from 'src/app/shared/types/todo.type';
 @Component({
   selector: 'app-edit-todo-dialog',
   templateUrl: './edit-todo-dialog.component.html',
-  styleUrls: ['./edit-todo-dialog.component.css'],
+  styleUrls: ['./edit-todo-dialog.component.scss'],
 })
 export class EditTodoDialogComponent {
   todoPriorityValues = Object.values(TodoPriority);

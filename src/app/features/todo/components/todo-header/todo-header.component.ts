@@ -7,7 +7,7 @@ import { TodoFacade } from '../../store/todo/todo.facade';
 @Component({
   selector: 'app-todo-header',
   templateUrl: './todo-header.component.html',
-  styleUrls: ['./todo-header.component.css'],
+  styleUrls: ['./todo-header.component.scss'],
 })
 export class TodoHeaderComponent {
   _todoFacade = inject(TodoFacade);

@@ -5,7 +5,7 @@ import { TodoPriority } from 'src/app/shared/enums/todo.enums';
 @Component({
   selector: 'app-todo-form',
   templateUrl: './todo-form.component.html',
-  styleUrl: './todo-form.component.css',
+  styleUrl: './todo-form.component.scss',
 })
 export class TodoFormComponent {
   @Output() newTodo = new EventEmitter<{

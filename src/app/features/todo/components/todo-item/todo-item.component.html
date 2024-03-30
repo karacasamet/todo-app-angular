@@ -6,9 +6,7 @@
         : ''
     "
     >{{ todo.name }}
-    <ng-container *ngIf="todo.status === statusEnum.Complete"
-      >(completed)</ng-container
-    >
+    @if (todo.status === statusEnum.Complete) {(completed)}
   </span>
   <div>
     {{ todo.priority | titlecase }}
