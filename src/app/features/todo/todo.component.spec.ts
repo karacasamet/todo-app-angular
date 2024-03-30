@@ -1,3 +1,4 @@
+import { ScrollingModule } from '@angular/cdk/scrolling';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDividerModule } from '@angular/material/divider';
@@ -31,6 +32,7 @@ describe('TodoComponent', () => {
         MatFormFieldModule,
         MatInputModule,
         MatIconModule,
+        ScrollingModule,
       ],
       providers: [
         provideMockStore({

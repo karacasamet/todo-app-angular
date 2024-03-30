@@ -1,6 +1,23 @@
 import { TodoPriority, TodoStatus } from '../enums/todo.enums';
 import { Todo } from '../types/todo.type';
 
+export const todos: Todo[] = Array.from({ length: 1000000 }, (_, i) => ({
+  id: i + 1,
+  name: `My todo number ${i + 1}`,
+  status:
+    i % 3 === 0
+      ? TodoStatus.Complete
+      : i % 3 === 1
+      ? TodoStatus.InProgress
+      : TodoStatus.Complete,
+  priority:
+    i % 3 === 0
+      ? TodoPriority.Low
+      : i % 3 === 1
+      ? TodoPriority.Medium
+      : TodoPriority.High,
+}));
+
 export const mockTodos: Todo[] = [
   {
     id: 1,
