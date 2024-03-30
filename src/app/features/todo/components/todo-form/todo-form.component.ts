@@ -1,4 +1,9 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Output,
+} from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { TodoPriority } from 'src/app/shared/enums/todo.enums';
 
@@ -6,6 +11,7 @@ import { TodoPriority } from 'src/app/shared/enums/todo.enums';
   selector: 'app-todo-form',
   templateUrl: './todo-form.component.html',
   styleUrl: './todo-form.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TodoFormComponent {
   @Output() newTodo = new EventEmitter<{

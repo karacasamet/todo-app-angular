@@ -5,11 +5,9 @@ export const todos: Todo[] = Array.from({ length: 1000000 }, (_, i) => ({
   id: i + 1,
   name: `My todo number ${i + 1}`,
   status:
-    i % 3 === 0
+    Math.round(Math.random()) === 0
       ? TodoStatus.Complete
-      : i % 3 === 1
-      ? TodoStatus.InProgress
-      : TodoStatus.Complete,
+      : TodoStatus.InProgress,
   priority:
     i % 3 === 0
       ? TodoPriority.Low
