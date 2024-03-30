@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { ScrollingModule } from '@angular/cdk/scrolling';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
@@ -19,6 +20,7 @@ describe('TodoListComponent', () => {
         MatTabsModule,
         BrowserAnimationsModule,
         MatIconModule,
+        ScrollingModule,
       ],
       providers: [provideMockStore()],
       declarations: [TodoListComponent, TodoHeaderComponent],
