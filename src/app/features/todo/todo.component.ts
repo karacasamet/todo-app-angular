@@ -7,7 +7,7 @@ import { TodoFacade } from './store/todo/todo.facade';
 @Component({
   selector: 'app-todo',
   templateUrl: './todo.component.html',
-  styleUrls: ['./todo.component.css'],
+  styleUrls: ['./todo.component.scss'],
 })
 export class TodoComponent implements OnInit {
   _todoFacade = inject(TodoFacade);

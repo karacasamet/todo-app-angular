@@ -14,13 +14,12 @@
 
 <ng-template #content>
   <app-todo-header></app-todo-header>
-  <ng-container *ngFor="let todo of todos">
-    <app-todo-item
-      [todo]="todo"
-      (todoStatusChanged)="todoStatusChanged.emit($event)"
-      (todoUpdated)="todoUpdated.emit($event)"
-      (todoRemoved)="todoRemoved.emit($event)"
-    ></app-todo-item>
-  </ng-container>
-  <p class="todo-item" *ngIf="todos?.length === 0">No todos</p>
+  @for (todo of todos; track todo.id) {
+  <app-todo-item
+    [todo]="todo"
+    (todoStatusChanged)="todoStatusChanged.emit($event)"
+    (todoUpdated)="todoUpdated.emit($event)"
+    (todoRemoved)="todoRemoved.emit($event)"
+  ></app-todo-item>
+  } @empty { Empty list of todos }
 </ng-template>

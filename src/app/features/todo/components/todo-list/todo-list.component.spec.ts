@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MatDividerModule } from '@angular/material/divider';
+import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { provideMockStore } from '@ngrx/store/testing';
@@ -13,7 +14,12 @@ describe('TodoListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MatDividerModule, MatTabsModule, BrowserAnimationsModule],
+      imports: [
+        MatDividerModule,
+        MatTabsModule,
+        BrowserAnimationsModule,
+        MatIconModule,
+      ],
       providers: [provideMockStore()],
       declarations: [TodoListComponent, TodoHeaderComponent],
     }).compileComponents();

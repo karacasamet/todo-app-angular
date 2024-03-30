@@ -1,0 +1,17 @@
+@use "scss/variables";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "scss/helpers";
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  background-color: variables.$body-white;
+  font-family: variables.$font-stack;
+}
+
+.container {
+  max-width: variables.$max-width;
+  margin: variables.$margin;
+  padding: 20px;
+}
