@@ -1,7 +1,7 @@
 import { TodoPriority, TodoStatus } from '../enums/todo.enums';
 import { Todo } from '../types/todo.type';
 
-export const todos: Todo[] = Array.from({ length: 1000000 }, (_, i) => ({
+export const todos: Todo[] = Array.from({ length: 5 }, (_, i) => ({
   id: i + 1,
   name: `My todo number ${i + 1}`,
   status:
