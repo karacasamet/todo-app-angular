@@ -10,7 +10,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ## Live Version
 
-You can check the live version of the application at [prismatic-crepe-5ecea6.netlify.app](https://prismatic-crepe-5ecea6.netlify.app/).
+You can check the live version of the application at [todo-app-angular-psi.vercel.app](https://todo-app-angular-psi.vercel.app/).
 
 ### Prerequisites
 
