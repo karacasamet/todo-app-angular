@@ -3,24 +3,15 @@
   "targetDefaults": {
     "build": {
       "cache": true,
-      "dependsOn": [
-        "^build"
-      ],
-      "inputs": [
-        "production",
-        "^production"
-      ]
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
     }
   },
   "defaultBase": "master",
   "namedInputs": {
     "sharedGlobals": [],
-    "default": [
-      "{projectRoot}/**/*",
-      "sharedGlobals"
-    ],
-    "production": [
-      "default"
-    ]
-  }
+    "default": ["{projectRoot}/**/*", "sharedGlobals"],
+    "production": ["default"]
+  },
+  "nxCloudAccessToken": "MmU0YjA1ZjQtZDhjZi00OWQwLWI3NTEtOGIwMWEwNDBiODVlfHJlYWQtd3JpdGU="
 }
