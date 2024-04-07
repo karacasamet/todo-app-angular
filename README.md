@@ -1,4 +1,3 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/8da90782-aa6a-4393-aa24-d1c4f262d525/deploy-status)](https://app.netlify.com/sites/prismatic-crepe-5ecea6/deploys)
 [![cov](https://karacasamet.github.io/todo-app-angular/badges/coverage.svg)](https://github.com/karacasamet/todo-app-angular/actions)
 
 # App
