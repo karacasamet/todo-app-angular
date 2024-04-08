@@ -10,6 +10,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { TodoPriority } from 'src/app/shared/enums/todo.enums';
 import { mockTodos } from 'src/app/shared/mock/todo.mock';
+import { PrioritySelectComponent } from './components/priority-select/priority-select.component';
 import { TodoFormComponent } from './components/todo-form/todo-form.component';
 import { TodoHeaderComponent } from './components/todo-header/todo-header.component';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
@@ -33,6 +34,7 @@ describe('TodoComponent', () => {
         MatInputModule,
         MatIconModule,
         ScrollingModule,
+        PrioritySelectComponent,
       ],
       providers: [
         provideMockStore({

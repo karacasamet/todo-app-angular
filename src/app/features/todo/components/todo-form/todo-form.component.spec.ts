@@ -5,6 +5,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TodoPriority } from 'src/app/shared/enums/todo.enums';
+import { PrioritySelectComponent } from '../priority-select/priority-select.component';
 import { TodoFormComponent } from './todo-form.component';
 
 describe('TodoFormComponent', () => {
@@ -18,6 +19,7 @@ describe('TodoFormComponent', () => {
         MatFormFieldModule,
         MatInputModule,
         BrowserAnimationsModule,
+        PrioritySelectComponent,
       ],
       declarations: [TodoFormComponent],
     }).compileComponents();
