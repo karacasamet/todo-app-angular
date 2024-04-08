@@ -12,6 +12,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatTabsModule } from '@angular/material/tabs';
 import { TrueFalsePipe } from '../../shared/pipes/true-false.pipe';
 import { EditTodoDialogComponent } from './components/edit-todo-dialog/edit-todo-dialog.component';
+import { PrioritySelectComponent } from './components/priority-select/priority-select.component';
 import { TodoFormComponent } from './components/todo-form/todo-form.component';
 import { TodoHeaderComponent } from './components/todo-header/todo-header.component';
 import { TodoItemComponent } from './components/todo-item/todo-item.component';
@@ -44,6 +45,7 @@ import { TodoComponent } from './todo.component';
     ReactiveFormsModule,
     TrueFalsePipe,
     ScrollingModule,
+    PrioritySelectComponent,
   ],
 })
 export class TodoModule {}

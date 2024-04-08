@@ -10,7 +10,6 @@ import { Todo } from 'src/app/shared/types/todo.type';
   styleUrls: ['./edit-todo-dialog.component.scss'],
 })
 export class EditTodoDialogComponent {
-  todoPriorityValues = Object.values(TodoPriority);
   todoForm = this.fb.group({
     todoName: new FormControl(this.data.name, [Validators.required]),
     todoPriority: new FormControl(this.data.priority, [Validators.required]),
