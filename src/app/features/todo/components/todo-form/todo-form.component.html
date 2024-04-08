@@ -9,16 +9,7 @@
           formControlName="todoName"
         />
       </mat-form-field>
-      <mat-form-field>
-        <mat-label>Priority</mat-label>
-        <select matNativeControl formControlName="todoPriority">
-          @for (todoPriority of todoPriorityValues; track todoPriorityValues) {
-          <option [value]="todoPriority">
-            {{ todoPriority }}
-          </option>
-          }
-        </select>
-      </mat-form-field>
+      <app-priority-select formControlName="todoPriority"></app-priority-select>
       <button
         mat-raised-button
         color="primary"

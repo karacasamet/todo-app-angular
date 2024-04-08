@@ -11,7 +11,7 @@ body {
 }
 
 .container {
-  max-width: variables.$max-width;
-  margin: variables.$margin;
+  max-width: variables.$container-max-width;
+  margin: variables.$container-margin;
   padding: 20px;
 }

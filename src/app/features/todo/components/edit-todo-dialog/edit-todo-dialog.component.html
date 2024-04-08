@@ -5,17 +5,7 @@
       <mat-label>New ToDo name</mat-label>
       <input matInput formControlName="todoName" />
     </mat-form-field>
-
-    <mat-form-field>
-      <mat-label>Priority</mat-label>
-      <select matNativeControl formControlName="todoPriority">
-        @for (todoPriority of todoPriorityValues; track todoPriorityValues) {
-        <option [value]="todoPriority">
-          {{ todoPriority }}
-        </option>
-        }
-      </select>
-    </mat-form-field>
+    <app-priority-select formControlName="todoPriority"></app-priority-select>
   </form>
 </div>
 <div mat-dialog-actions align="end">
