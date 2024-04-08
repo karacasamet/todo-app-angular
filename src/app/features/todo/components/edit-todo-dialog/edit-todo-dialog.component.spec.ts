@@ -9,6 +9,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { mockTodos } from 'src/app/shared/mock/todo.mock';
+import { PrioritySelectComponent } from '../priority-select/priority-select.component';
 import { EditTodoDialogComponent } from './edit-todo-dialog.component';
 
 describe('EditTodoDialogComponent', () => {
@@ -28,6 +29,7 @@ describe('EditTodoDialogComponent', () => {
         MatFormFieldModule,
         MatInputModule,
         BrowserAnimationsModule,
+        PrioritySelectComponent,
       ],
       declarations: [EditTodoDialogComponent],
       providers: [

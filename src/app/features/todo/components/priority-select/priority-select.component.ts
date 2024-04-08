@@ -48,6 +48,7 @@ export class PrioritySelectComponent
 
   value!: TodoPriority;
   disabled = false;
+
   onChange: (value: TodoPriority) => void = (value) => {
     this.writeValue(value);
   };
